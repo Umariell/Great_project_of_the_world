@@ -18,10 +18,10 @@ MainWindow::MainWindow(const QString &parameters_path, QWidget *parent) :
     scene_3d = new Scene3D(ui->tab_3d->layout());
 
     solver = new Solver(parameters_path.toStdString());
-    int flag = 1;
 
-    while (flag) {
-        flag = solver->readParamEl();
+    while (true) {
+        int flag = solver->readParamEl();
+
         if (flag == 2) {
             QMessageBox box;
             box.setWindowTitle("Error");
@@ -29,7 +29,8 @@ MainWindow::MainWindow(const QString &parameters_path, QWidget *parent) :
             box.setIcon(QMessageBox::Critical);
             box.exec();
             exit(EXIT_FAILURE);
-        }
+        } else if (flag != 1)
+            break;
 
         QTreeWidgetItem *item = new QTreeWidgetItem(ui->treeWidget);
 
