@@ -5,9 +5,9 @@
 GroupEllipses::GroupEllipses(Ellipse *new_ellipse)
 {
     ellipsis.push_back(new_ellipse);
-    upperLeftX = new_ellipse->x - new_ellipse->rect_halfwidth - DEPTH;
+    upperLeftX = new_ellipse->x - new_ellipse->rect_halfwidth;
     upperLeftY = new_ellipse->y + new_ellipse->rect_halfheight;
-    bottomRightX = new_ellipse->x + new_ellipse->rect_halfwidth + DEPTH;
+    bottomRightX = new_ellipse->x + new_ellipse->rect_halfwidth;
     bottomRightY = new_ellipse->y - new_ellipse->rect_halfheight;
 }
 
@@ -22,9 +22,9 @@ bool GroupEllipses::check_overlay(Ellipse *other)
 void GroupEllipses::add_ellipse(Ellipse *new_ellipse)
 {
     ellipsis.push_back(new_ellipse);
-    upperLeftX = min(upperLeftX, new_ellipse->x - new_ellipse->rect_halfwidth - DEPTH);
+    upperLeftX = min(upperLeftX, new_ellipse->x - new_ellipse->rect_halfwidth);
     upperLeftY = max(upperLeftY, new_ellipse->y + new_ellipse->rect_halfheight);
-    bottomRightX = max(bottomRightX, new_ellipse->x + new_ellipse->rect_halfwidth + DEPTH);
+    bottomRightX = max(bottomRightX, new_ellipse->x + new_ellipse->rect_halfwidth);
     bottomRightY = min(bottomRightY, new_ellipse->y - new_ellipse->rect_halfheight);
 }
 
