@@ -50,16 +50,16 @@ bool Ellipse::check_overlay(Ellipse *other)
     if (delta_L > DEPTH)
         return false;
 
-    if (x - rect_halfwidth > other->x + other->rect_halfwidth)
+    if (x - rect_halfwidth > other->x + other->rect_halfwidth + DEPTH)
         return false;
 
-    if (x + rect_halfwidth < other->x - other->rect_halfwidth)
+    if (x + rect_halfwidth < other->x - other->rect_halfwidth - DEPTH)
         return false;
 
-    if (y + rect_halfheight < other->y - other->rect_halfheight)
+    if (y + rect_halfheight < other->y - other->rect_halfheight - DEPTH)
         return false;
 
-    if (y - rect_halfheight > other->y + other->rect_halfheight)
+    if (y - rect_halfheight > other->y + other->rect_halfheight + DEPTH)
         return false;
 
     return true;
