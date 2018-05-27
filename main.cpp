@@ -14,7 +14,7 @@ int main(int argc, char* argv[])
 {
     QApplication app(argc, argv);
 
-    QString parameters_path = QDir::currentPath() + "/Parameters.txt";
+    QString parameters_path = QDir::currentPath() + "/1.txt";
     if (!QFile::exists(parameters_path)) {
         QMessageBox mbox(QMessageBox::Warning, "Внимание", "Файл Parameters.exe не найден!"
                          "\nПроверьте, чтобы он был расположен в каталоге с exe файлом.");

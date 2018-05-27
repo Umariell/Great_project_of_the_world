@@ -15,6 +15,6 @@ class GroupEllipses;
 typedef double dbl;
 
 // константы
-#define DEPTH 100.0
+#define DEPTH 1.0
 
 #define PI 3.141592653589793

@@ -33,13 +33,13 @@ int Solver::readParamEl()
     }
 
     cout << "ELLIPSOID: " << endl;
-    cout << "  X: " << x << " m" << endl << "  Y: " << y << " m" << endl << "  Z: " << z << " m" << endl;
+    cout << "  X: " << x << " km" << endl << "  Y: " << y << " km" << endl << "  Z: " << z << " km" << endl;
     cout << "  alpha: " << alpha_D << " (in gradus)" <<"  beta: " << beta_D << " (in gradus)"<< endl;
     alpha = GradusToRadian(alpha_D);
     cout<<"  alpha: " << alpha << " (in radian)" << endl;
     beta = GradusToRadian(beta_D);
     cout<<"  beta: " << beta << " (in radian)" << endl;
-    cout<<  "  a: " << a << " m" << endl << "  b: " << b << " m"<<endl;
+    cout<<  "  a: " << a << " km" << endl << "  b: " << b << " km"<<endl;
     cout<<endl;
     calculationOfSquare();
     cout << endl;
@@ -80,8 +80,8 @@ void Solver::calculationOfSquare()
     S_pro = PI*a_pro*b_pro;
 
     cout << "ELLIPS: " << endl;
-    cout << "  a_pro: " << a_pro << " m " << endl << "  b_pro: " << b_pro << " m " << endl;
-    cout << fixed << "  S_pro: " << S_pro << " m^2 " << endl;
+    cout << "  a_pro: " << a_pro << " km " << endl << "  b_pro: " << b_pro << " km " << endl;
+    cout << fixed << "  S_pro: " << S_pro << " km^2 " << endl;
 }
 
 //method of conversion from radians to gradus
@@ -105,7 +105,7 @@ void Solver::theDistance()
     L=sqrt(x*x+y*y+z*z);
     omega=S_pro/(x*x+y*y+z*z);
     cout << "DISTANCE: " << endl;
-    cout << fixed << "  L: " << L << " m " << endl << "  omega: " << omega << " (in radian^2)"<< endl;
+    cout << fixed << "  L: " << L << " km " << endl << "  omega: " << omega << " (in radian^2)"<< endl;
     omega_D = Radian2ToGradus2(omega);
     cout<<"  omega: " << omega_D << " (in gradus^2)" << endl;
 }

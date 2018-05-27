@@ -36,6 +36,7 @@ RESOURCES += \
     resources.qrc
 
 DISTFILES += \
-    build/Parameters.txt
+    build/Parameters.txt \
+    build/1.txt
 
 RC_ICONS = rocket-ship.ico
