@@ -63,6 +63,8 @@ MainWindow::MainWindow(const QString &parameters_path, QWidget *parent) :
     qDebug() << "Рассчет площади занял:" << timer.elapsed();
 
     for (auto it_group : solver->groups) {
+        if (!it_group)
+            continue;
         auto item = new QTreeWidgetItem(ui->treeWidget_2);
         QString name = QString("Группа %1").arg(ui->treeWidget_2->topLevelItemCount());
         item->setText(0, name);
